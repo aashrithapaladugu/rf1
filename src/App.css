@@ -1,0 +1,137 @@
+/* App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4c669f, #192a56, #2f3640);
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  position: relative;
+  overflow: hidden; /* To hide the emojis going out of the container */
+  color: #fff; /* Default text color */
+}
+
+.title {
+  font-family: 'Great Vibes', cursive; /* Apply Great Vibes font */
+  color: #fff; /* Set color to white */
+  font-size: 3rem; /* Adjust size as needed */
+}
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Prevent interaction with background animations */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto; /* Ensure interaction with content */
+}
+
+.App h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.emoji {
+  position: absolute;
+  bottom: -50px; /* Start below the screen */
+  font-size: 2rem;
+  animation: moveUp 5s infinite;
+  opacity: 0;
+}
+
+.emoji:nth-child(1) { left: 20%; animation-delay: 0s; }
+.emoji:nth-child(2) { left: 40%; animation-delay: 1s; }
+.emoji:nth-child(3) { left: 60%; animation-delay: 2s; }
+.emoji:nth-child(4) { left: 80%; animation-delay: 3s; }
+.emoji:nth-child(5) { left: 50%; animation-delay: 4s; }
+
+@keyframes moveUp {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
+/* SearchBar styles */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-box input {
+  padding: 12px 15px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #34495e;
+  border-radius: 5px;
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #2980b9;
+  color: #ecf0f1;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #1c6ea4;
+}
+
+/* RecipeList styles */
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.recipe {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #7f8c8d;
+  border-radius: 10px;
+  width: 250px;
+  background-color: #2c3e50;
+  color: #fff; /* Recipe text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.recipe:hover {
+  transform: scale(1.05);
+}
+
+.recipe img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
